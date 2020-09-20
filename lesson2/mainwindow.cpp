@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QStandardItemModel>
-#include <Qlist>
+//#include <Qlist>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -15,12 +15,12 @@ MainWindow::MainWindow(QWidget *parent)
 
     itemModel = new CustomListModel(this);
     ui->listView->setModel(itemModel);
-    itemModel->appendRow(new QStandardItem(QIcon("./img/C-logo.png"), "C++"));
-    itemModel->appendRow(new QStandardItem(QIcon("./img/csharp-logo.png"), "C#"));
-    itemModel->appendRow(new QStandardItem(QIcon("./img/java-logo.png"),"Java"));
-    itemModel->appendRow(new QStandardItem(QIcon("./img/php-logo.png"), "PHP"));
-    itemModel->appendRow(new QStandardItem(QIcon("./img/python-logo.png"), "Python"));
-    itemModel->appendRow(new QStandardItem(QIcon("./img/javascript-logo.png"),"Java Script"));
+    itemModel->appendRow(new QStandardItem(QIcon(":resource/img/C-logo.png"), "C++"));
+    itemModel->appendRow(new QStandardItem(QIcon(":resource/img/csharp-logo.png"), "C#"));
+    itemModel->appendRow(new QStandardItem(QIcon(":resource/img/java-logo.png"),"Java"));
+    itemModel->appendRow(new QStandardItem(QIcon(":resource/img/php-logo.png"), "PHP"));
+    itemModel->appendRow(new QStandardItem(QIcon(":resource/img/python-logo.png"), "Python"));
+    itemModel->appendRow(new QStandardItem(QIcon(":resource/img/javascript-logo.png"),"Java Script"));
 
     listGridSize = ui->listView->gridSize();
     iconGridSize = QSize(50,60);

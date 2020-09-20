@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/resource">
+        <file>img/C-logo.png</file>
+        <file>img/csharp-logo.png</file>
+        <file>img/java-logo.png</file>
+        <file>img/javascript-logo.png</file>
+        <file>img/php-logo.png</file>
+        <file>img/python-logo.png</file>
+    </qresource>
+</RCC>
