@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>readme.txt</file>
+    </qresource>
+    <qresource prefix="/lang">
+        <file>LangRU.qm</file>
+    </qresource>
+</RCC>

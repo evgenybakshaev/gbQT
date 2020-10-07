@@ -17,15 +17,15 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::on_actionUndo_triggered()
-{
-    ui->plainTextEdit->undo();
-}
+//void MainWindow::on_actionUndo_triggered()
+//{
+//    ui->plainTextEdit->undo();
+//}
 
-void MainWindow::on_actionRedo_triggered()
-{
-    ui->plainTextEdit->redo();
-}
+//void MainWindow::on_actionRedo_triggered()
+//{
+//    ui->plainTextEdit->redo();
+//}
 
 void MainWindow::on_plainTextEdit_textChanged()
 {
