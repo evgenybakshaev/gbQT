@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>readme.txt</file>
+    </qresource>
+    <qresource prefix="/lang">
+        <file>LangRU.qm</file>
+    </qresource>
+    <qresource prefix="/qss">
+        <file>AMOLED.qss</file>
+        <file>Aqua.qss</file>
+        <file>ConsoleStyle.qss</file>
+        <file>ElegantDark.qss</file>
+        <file>ManjaroMix.qss</file>
+        <file>MaterialDark.qss</file>
+        <file>Ubuntu.qss</file>
+    </qresource>
+</RCC>
