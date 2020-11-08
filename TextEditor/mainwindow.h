@@ -65,6 +65,8 @@ private slots:
 
     void on_actionFont_triggered();
 
+    void on_actioninsertDateTime_triggered();
+
 private:
 
     Ui::MainWindow *ui;

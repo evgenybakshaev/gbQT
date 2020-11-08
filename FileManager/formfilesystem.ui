@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>500</width>
-    <height>300</height>
+    <width>777</width>
+    <height>476</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -19,15 +19,21 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QGridLayout" name="gridLayout" columnstretch="0,0,0,0">
+  <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
     <widget class="QComboBox" name="disckSelBox"/>
    </item>
-   <item row="1" column="0" colspan="4">
+   <item row="0" column="7" alignment="Qt::AlignRight">
+    <widget class="QLineEdit" name="lineEdit_2"/>
+   </item>
+   <item row="0" column="1" colspan="6">
+    <widget class="QLineEdit" name="lineEdit"/>
+   </item>
+   <item row="1" column="0" colspan="3">
     <widget class="QTreeView" name="tree"/>
    </item>
-   <item row="0" column="1" colspan="3">
-    <widget class="QLineEdit" name="lineEdit"/>
+   <item row="1" column="3" colspan="5">
+    <widget class="QListView" name="listView"/>
    </item>
   </layout>
  </widget>

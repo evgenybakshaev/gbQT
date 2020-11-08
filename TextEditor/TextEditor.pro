@@ -17,14 +17,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     about.cpp \
-    blockscheme.cpp \
     main.cpp \
     mainwindow.cpp \
     shortcuts.cpp
 
 HEADERS += \
     about.h \
-    blockscheme.h \
     mainwindow.h \
     shortcuts.h
 

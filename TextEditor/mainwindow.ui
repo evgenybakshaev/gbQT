@@ -99,6 +99,8 @@
    <addaction name="actionPasteFormat"/>
    <addaction name="separator"/>
    <addaction name="actionFont"/>
+   <addaction name="separator"/>
+   <addaction name="actioninsertDateTime"/>
   </widget>
   <action name="actionNew">
    <property name="text">
@@ -237,6 +239,11 @@
   <action name="actionFont">
    <property name="text">
     <string>Font</string>
+   </property>
+  </action>
+  <action name="actioninsertDateTime">
+   <property name="text">
+    <string>insertDateTime</string>
    </property>
   </action>
  </widget>

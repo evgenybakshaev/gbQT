@@ -11,11 +11,13 @@ CONFIG += c++11
 SOURCES += \
     formfilesystem.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    threadfinder.cpp
 
 HEADERS += \
     formfilesystem.h \
-    mainwindow.h
+    mainwindow.h \
+    threadfinder.h
 
 FORMS += \
     formfilesystem.ui \

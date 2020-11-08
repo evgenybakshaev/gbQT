@@ -10,6 +10,7 @@
 #include <QPrintDialog>
 #include <QTextCharFormat>
 #include <QFontDialog>
+#include <QDateTime>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -20,8 +21,8 @@ MainWindow::MainWindow(QWidget *parent)
     QMdiSubWindow *sw = ui->mdiArea->addSubWindow(new QTextEdit(this));
     sw->setWindowTitle("Text Editor");
     sw->setMinimumSize(400,300);
+    sw->showMaximized();
 
-    //sw->showMaximized();
     QStringList horizontalHeader;
     horizontalHeader.append("Action");
     horizontalHeader.append("Shortcut");
@@ -290,4 +291,14 @@ void MainWindow::on_actionFont_triggered()
            fmt.setFont(font);
            curEdit->textCursor().setCharFormat(fmt);
        }
+}
+
+void MainWindow::on_actioninsertDateTime_triggered()
+{
+    QDateTime dt = QDateTime::currentDateTime();
+    QTextEdit *curEdit = ((QTextEdit*)ui->mdiArea->activeSubWindow()->widget());
+    if(curEdit)
+    {
+        curEdit->textCursor().insertText(dt.toString("dd.MM.yyyy hh:mm:ss"));
+    }
 }
