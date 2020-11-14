@@ -13,13 +13,13 @@ Window {
    height: 480
    title: qsTr("Organizer")
 // Обратите внимание на ElementUser, NewData - компоненты, созданные в QML
-   property string sc: 'ElementUser{width:600; ' // Шаблон для
+   property string sc: 'ElementUser{ ' // Шаблон для
                                                             // создания нового
                                                             // компонента
-   property string nc: 'NewData{width:600; height:95;}'
+   property string nc: 'NewData{}'
 
    property int num: 0
-   //property NewData newData: value
+   property NewData newData: value
    function addThisDate(name, date, progress)
    {
        loader.writeNewInformation(name, date, progress)
@@ -34,16 +34,21 @@ Window {
            if (succeed)           // См. объявление сигнала initEnd
 // Добавляем компонент для добавления нового города
            {
-               //newData = Qt.createQmlObject(nc, list, "objdata")
+               newData = Qt.createQmlObject(nc, list, "objdata")
                loader.getNextRecord()            // Запрашиваем у класса информацию о городе
            } else Qt.quit()
        }
        onLoadTown: {
-           var itog = sc + 'taskname:"' + name + '";taskdate:"' + date + '";taskprogress:"' + progress + '"}'
+           var itog = sc + 'taskname:qsTr("Task");taskdate:qsTr("Date");taskprogress:qsTr("Progress")}'
                                   // Формируем описание нового элемента
            var el = Qt.createQmlObject(itog, list, "obj" + num++)
+
+           itog = sc + 'taskname:"' + name + '";taskdate:"' + date + '";taskprogress:"' + progress + '"}'
+                                  // Формируем описание нового элемента
+           el = Qt.createQmlObject(itog, list, "obj" + num++)
            loader.getNextRecord() // Запрашиваем информацию о следующем
                                   // городе
+           newData.numTasks = num - 1
        }
    }
    ScrollView {
@@ -55,14 +60,16 @@ Window {
        ColumnLayout {
             id:list
 
-            NewData{}
+//            NewData{
+//                //numTasks: num
+//            }
 
-            ElementUser{
-               taskname: "Task"
-               taskdate: "Date"
-               taskprogress: "Progress"
-               enabled: false
-            }
+//            ElementUser{
+//               taskname: "Task"
+//               taskdate: "Date"
+//               taskprogress: "Progress"
+//               enabled: false
+//            }
 
             function add(name, date, progress) {
                root.addThisDate(name, date, progress)

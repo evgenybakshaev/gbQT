@@ -1,4 +1,4 @@
-QT       += core gui printsupport
+QT       += core gui printsupport testlib
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -19,12 +19,14 @@ SOURCES += \
     about.cpp \
     main.cpp \
     mainwindow.cpp \
-    shortcuts.cpp
+    shortcuts.cpp \
+    unittest.cpp
 
 HEADERS += \
     about.h \
     mainwindow.h \
-    shortcuts.h
+    shortcuts.h \
+    unittest.h
 
 FORMS += \
     about.ui \

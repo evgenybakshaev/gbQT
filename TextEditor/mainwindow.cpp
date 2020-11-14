@@ -179,7 +179,6 @@ void MainWindow::on_actionOpen_ReadOnly_triggered()
 
 void MainWindow::on_actionShortcuts_triggered()
 {
-
     uiShortcuts.show();
 }
 
@@ -192,11 +191,13 @@ void MainWindow::changeTheme(QString theme)
     qssFile.close();
 }
 
+QTextEdit *MainWindow::getCurEdit()
+{
+    return ((QTextEdit*)ui->mdiArea->activeSubWindow()->widget());
+}
+
 void MainWindow::shortcuts_changed(QList<QString> shortcuts)
 {
-//    foreach(auto shortcut, shortcuts)
-//        qDebug() << shortcut;
-
     ui->actionNew->setShortcut(shortcuts[0]);
     ui->actionOpen->setShortcut(shortcuts[1]);
     ui->actionSave->setShortcut(shortcuts[2]);
@@ -280,17 +281,17 @@ void MainWindow::on_actionFont_triggered()
 {
     QTextEdit *curEdit = ((QTextEdit*)ui->mdiArea->activeSubWindow()->widget());
     QFont font = curEdit->textCursor().charFormat().font(); // получаем текущий шрифт
-       QFontDialog fntDlg(font,this);
+    QFontDialog fntDlg(font,this);
 
-       bool b[] = {true};
-       font = fntDlg.getFont(b); // Запускаем диалог настройки шрифта
-       if (b[0])                 // Если нажата кнопка OK, применяем новые
-                                 // настройки шрифта
-       {
-           QTextCharFormat fmt;
-           fmt.setFont(font);
-           curEdit->textCursor().setCharFormat(fmt);
-       }
+    bool b[] = {true};
+    font = fntDlg.getFont(b); // Запускаем диалог настройки шрифта
+    if (b[0])                 // Если нажата кнопка OK, применяем новые
+                             // настройки шрифта
+    {
+       QTextCharFormat fmt;
+       fmt.setFont(font);
+       curEdit->textCursor().setCharFormat(fmt);
+    }
 }
 
 void MainWindow::on_actioninsertDateTime_triggered()
