@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>ElementUser.qml</file>
+        <file>NewData.qml</file>
+        <file>AboutWindow.qml</file>
+        <file>DatePicker.qml</file>
+        <file>AddButton.qml</file>
+    </qresource>
+    <qresource prefix="/img">
+        <file>Pressed.png</file>
+        <file>Unpressed.png</file>
+        <file>left_arrow.png</file>
+        <file>left_arrow_disable.png</file>
+        <file>right_arrow.png</file>
+        <file>right_arrow_disable.png</file>
+    </qresource>
+</RCC>
