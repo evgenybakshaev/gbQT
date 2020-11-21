@@ -48,7 +48,7 @@ Rectangle {
        focus: true
        height: 25
        verticalAlignment: Text.AlignVCenter
-       validator: RegExpValidator{regExp: /[а-яА-Яa-zA-Z0-9]+/}
+       validator: RegExpValidator{regExp: /([а-яА-Яa-zA-Z0-9]+\s*)+/}
     }
     //Date
     Text {
