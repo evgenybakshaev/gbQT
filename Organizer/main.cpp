@@ -1,6 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include "basereader.h"
+#include "basedbreader.h"
+#include "tablemodel.h"
 
 int main(int argc, char *argv[])
 {
@@ -16,7 +17,8 @@ int main(int argc, char *argv[])
            QCoreApplication::exit(-1);
    }, Qt::QueuedConnection);
 // Зарегистрируем класс
-   qmlRegisterType<BaseReader>("com.vv.exampleclass", 1, 0, "BaseReader");
+   qmlRegisterType<BaseDBReader>("BaseDBReader", 1, 0, "BaseDBReader");
+   qmlRegisterType<TableModel>("TableModel", 1, 0, "TableModel");
    engine.load(url);
 
    return app.exec();

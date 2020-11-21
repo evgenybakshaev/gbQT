@@ -13,14 +13,14 @@ public:
    Q_INVOKABLE
    void loadBase();
    Q_INVOKABLE
-   void getNextRecord();
+   void getRecords();
    Q_INVOKABLE
    void writeNewInformation(QString, QString, QString);
 private:
    QFile *file;
 signals:
    void initEnd(bool succeed);
-   void loadTown(QString name, QString date, QString progress);
+   void loadTask(QString name, QString date, QString progress);
 private slots:
 };
 

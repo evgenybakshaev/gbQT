@@ -7,6 +7,7 @@
         <file>AboutWindow.qml</file>
         <file>DatePicker.qml</file>
         <file>AddButton.qml</file>
+        <file>Table.qml</file>
     </qresource>
     <qresource prefix="/img">
         <file>Pressed.png</file>

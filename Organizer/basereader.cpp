@@ -22,29 +22,31 @@ void BaseReader::loadBase()
    emit initEnd(true);
 }
 
-void BaseReader::getNextRecord()                              // Читаем запись
+void BaseReader::getRecords()                              // Читаем запись
                                                               // о следующем
                                                               // городе
 {
-   if (file->atEnd()) return;
-   QDataStream stream(file);
-   int len = 0;
-   stream.readRawData((char*)&len, sizeof len);
-   QByteArray b;
-   b.resize(len);
-   stream.readRawData(b.data(), len);
-   QString name = QString::fromUtf8(b);
+   while (!file->atEnd())
+   {
+       QDataStream stream(file);
+       int len = 0;
+       stream.readRawData((char*)&len, sizeof len);
+       QByteArray b;
+       b.resize(len);
+       stream.readRawData(b.data(), len);
+       QString name = QString::fromUtf8(b);
 
-   stream.readRawData((char*)&len, sizeof len);
-   b.resize(len);
-   stream.readRawData(b.data(), len);
-   QString date = QString::fromUtf8(b);
+       stream.readRawData((char*)&len, sizeof len);
+       b.resize(len);
+       stream.readRawData(b.data(), len);
+       QString date = QString::fromUtf8(b);
 
-   stream.readRawData((char*)&len, sizeof len);
-   b.resize(len);
-   stream.readRawData(b.data(), len);
-   QString progress = QString::fromUtf8(b);
-   emit loadTown(name, date, progress);
+       stream.readRawData((char*)&len, sizeof len);
+       b.resize(len);
+       stream.readRawData(b.data(), len);
+       QString progress = QString::fromUtf8(b);
+       emit loadTask(name, date, progress);
+   }
 }
 
 void BaseReader::writeNewInformation(QString name, QString date, QString progress) // Записываем

@@ -1,7 +1,7 @@
 import QtQuick 2.13
 import QtQuick.Controls 2.5
-import QtQuick.Controls 1.4
-import QtQuick.Controls.Styles 1.4
+//import QtQuick.Controls 1.4
+//import QtQuick.Controls.Styles 1.4
 import QtQuick.Dialogs 1.3
 
 
@@ -192,6 +192,19 @@ Rectangle {
        width: 400
        height: 25
 
+   }
+   Button {
+       anchors.left: addData.left
+       anchors.top: _TotalTasks.top
+       anchors.right: mainrect.right
+       anchors.rightMargin: 5
+       height: 25
+       text: "Table View"
+       onClicked: {
+           var component = Qt.createComponent("Table.qml")
+           var obj = component.createObject(mainrect)
+           obj.show()
+       }
    }
 
 
