@@ -25,7 +25,7 @@ Window {
        loader.writeNewInformation(name, date, progress)
        var itog = sc + 'taskname:"' + name + '";taskdate:"' + date + '";taskprogress:"' + progress + '"}'
        var el = Qt.createQmlObject(itog, list, "obj" + num++)
-
+       newData.numTasks = num - 1
    }
    BaseReader{
        id : loader
